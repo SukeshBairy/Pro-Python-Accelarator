@@ -25,9 +25,6 @@ while True:
         flag = -1
         print("Use atleast one special character [_@$#]") 
         break
-    elif re.search("\s", password): 
-        flag = -1
-        break
     else: 
         flag = 0
         print("Valid Password")
