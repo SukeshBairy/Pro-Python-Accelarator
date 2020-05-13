@@ -1,68 +1,67 @@
+import time
+start_time =  time.time()
 class Parking:
-    def _init_(self,name,ph,veh_num,types,slot):
-        self.name=name
-        self.ph=ph
-        self.veh_num=veh_num
-        self.types=types
-        self.slot=slot
-dict2={}
-dict4={}
-c2=5
-c4=5    
-list2=[0 for i in range(5)]
-list4=[0 for i in range(5)]
-while(True):    
-    ch=int(input("Enter choice:\n1.Park vehicle\n2.Remove vehicle\n3.Exit\n"))
-    w=input("a. 2-wheeler\nb. 4-wheeler:\n")
-    if ch==1:
-        name=input("Enter name:")
-        ph=int(input("Enter ph no: "))
-        veh_num=input("Enter vehicle number:\n")
-        #starttime
-        if w=='a':
-            types=2
-            if c2!=0:
-                for i in range(0,len(list2)):
-                    if list2[i]==0:
-                        list2[i]=1
-                        c2=c2-1
-                        slot=i+1
-                        print(list2)
-                        break
-                dict2[veh_num]=slot
-                print(dict2)
-            else:
-                print("slot unavailable")
-        elif w=='b':
-            types=4
-            if c4!=0:
-                for i in range(0,len(list2)):
-                    if list4[i]==0:
-                        list4[i]=1
-                        c4=c4-1
-                        slot=i+1 
-                        break
-                dict4[veh_num]=slot
-            else:
-                print("slot unavailable")
-        else:
-            print("invalid")
-            
-        p=Parking(name,ph,veh_num,types,slot)
-        a={p.name,p.ph,p.veh_num,p.types,p.slot}
-        print("your details:\n",p.name,"\n",p.ph,"\n",p.veh_num,"\n",p.types,"\n")
-        print("ur slot number:",p.slot)
-    
-    elif ch==2:
-        veh_num1=input("Enter ur vehicle number: ")
-        if(w=='a'):
-            slot1=dict2[veh_num1]
-            c2=c2+1
-            list2[slot1-1]=0
-            print(list2)
-        elif(w=='b'):
-            slot1=dict4[veh_num1]
-            c4=c4+1
-            list4[slot1-1]=0
-    else:
-        exit(0)
+
+	two_wheeler_slots = int(input("Enter the number of 2 wheeler slots: "))
+	four_wheeler_slots = int(input("Enter the number of 4 wheeler slots: "))
+
+	def __init__(self):
+		pass
+
+	def enter(self):
+		choice = input("What type of vehicle?\n 1. 2 Wheeler \n 2. 4 Wheeler")	
+		if choice == "1":
+			self.two_wheeler_slots = self.two_wheeler_slots - 1
+			print("Available slots: ", self.two_wheeler_slots)
+
+		elif choice == "2":
+			self.four_wheeler_slots = self.four_wheeler_slots - 1
+			print("Available slots: ", self.four_wheeler_slots)
+
+	def exit(self):
+		type = input("Which vehicle is exiting?\n 1. 2 Wheeler\n 2. 4 Wheeler")	
+		if type == "1":
+			self.two_wheeler_slots = self.two_wheeler_slots + 1
+			print("Available slots:", self.two_wheeler_slots)
+			stop_time_2 = (time.time() - start_time)*900
+			if stop_time_2 > 3600 and stop_time_2 <= 7200:
+				print("Parking fee is ₹10")
+			elif stop_time_2 > 7200 and stop_time_2 <= 10800:
+				print("Parking fee is ₹20")
+			elif stop_time_2 > 10800 and stop_time_2 <=14400:
+				print("Parking fee is ₹30")
+			else:
+				print("Parking fee is ₹50")
+
+		elif type == "2":
+				self.four_wheeler_slots = self.four_wheeler_slots + 1
+				print("Available slots", self.four_wheeler_slots)
+				stop_time_4 = (time.time() - start_time)*900
+				if stop_time_4 > 3600 and stop_time_4 <= 7200:
+					print("Parking fee is ₹30")	
+				elif stop_time_4 > 7200 and stop_time_4 <= 10800:
+					print("Parking fee is ₹40")
+				elif stop_time_4 > 10800 and stop_time_4 <= 14400:
+					print("Parking fee is ₹50")	
+				else:
+					print("Parking fee is ₹100")
+
+	def available_slots(self):
+		print("4 wheeler slots:", self.four_wheeler_slots)
+		print("\n 2 wheeler slots: ", self.two_wheeler_slots)
+
+print("Parking Bill")	
+while True:
+	choice = input("Select: \n 1.vehicle entering \n 2. vehicle exiting \n 3. Available slots")
+	if choice == '1':
+		vehicle_no = input("Enter the Vehicle number:")
+		vehicle = Parking()
+		vehicle.enter()
+	elif choice == "2":
+		vehicle.exit()
+		del vehicle
+	elif choice == "3":
+		vehicle.available_slots()
+	else:
+		break			
+
