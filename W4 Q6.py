@@ -4,7 +4,7 @@ user_name=input("Enter the User name:")
 password=input("Enter a Password:")
 flag = 0
 while True:   
-    if ((len(password)<8) and (len(password)>16)): 
+    if ((len(password)<8) or (len(password)>16)): 
         flag = -1
         print("Entered Password has either less than 8 characters or more than 16 characters. Please enter another Password.")
         break
