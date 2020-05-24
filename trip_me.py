@@ -56,18 +56,18 @@ while True:
 	elif ch == 2:
 		print(tabulate(tables_upcoming_treks,headers_upcoming_treks,tablefmt="github"))
 		places=int(input("where do you like to go?\n-->"))
-		for i in tables_upcoming_treks:
-			for j in i:
-				if places == j:
-					print(f" Congrats {tm.name}!\nYour trip to {tables_upcoming_treks[j][2]} is done.\n Your Trip expenses gonna cost {tables_upcoming_treks[j][3]}.\n For more information , details will be sent to your Email_id {tm.email_id}.")
+		for i in range(1,len(tables_upcoming_treks)):
+			for j in range(1,i):
+				if places == i:
+					printf" Congrats {tm.name}!\nYour trip to {tables_upcoming_treks[j][2]} is done.\n Your Trip expenses gonna cost {tables_upcoming_treks[j][3]}.\n For more information , details will be sent to your Email_id {tm.email_id}.")
 				else:
 					pass	
 	elif ch == 3:
 		print(tabulate(tables_himalayan_treks,headers_himalayan_tricks,tablefmt="github"))	
 		places=int(input("where do you like to go?\n-->"))
-		for i in tables_himalayan_treks:
-			for j in i:
-				if places == j:
+		for i in range(1,len(tables_himalayan_treks)):
+			for j in range(1,i):
+				if places == i:
 					print(f"Congrats {tm.name}!\nYour trip to {tables_himalayan_treks[j][2]} is done.\n \n Your Trip expenses gonna cost {tables_himalayan_treks[j][3]}.\n For more information , details will be sent to your Email_id {tm.email_id}.") 
 				else:
 					pass	
