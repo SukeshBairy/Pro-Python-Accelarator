@@ -26,7 +26,7 @@ class Trek:
     
     # Confirmation of ticket booking.
     def congrats(self, name, place, total_cost, number_of_seats):
-        print(f" Hey {self.name}, your booking to {self.place} has been confirmed.\nThe total cost is  ₹{self.total_cost}.Total number of seats you have booked is {self.number_of_seats}.\nMore details will be provided to your Email ID.\n HAVE A NICE DAY :')")
+        print(f" Hey {self.name}, your booking to {self.place} has been allotted.\nThe total cost is  ₹{self.total_cost}.Total number of seats you have allotted is {self.number_of_seats}.\n To confirm the booking,kindly do the payment.\nMore details will be provided to your Email ID.")
 
      
     
@@ -68,7 +68,7 @@ Tamil_Nadu = [["Kotagiri Trek, Ooty", "4940"], ["Trek to Canopy Hills, Vattakana
 tn = {"Kotagiri Trek, Ooty": 4940, "Trek to Canopy Hills, Vattakanal":
       5706, "Top Station Trek - Munnar": 4428}
 
-headers_tamilnadu_treks = ["Places", "Price"]
+headers_tamilnadu_treks = ["Places", "Price}
 
 
 ker = {"Paithalmala Trek, Kerala": 3953, "Trek to Banasura Hills, Wayanad":
