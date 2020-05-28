@@ -1,8 +1,14 @@
 from tabulate import tabulate
 from project_main import *
-
-
+                   """Welcome to World Adventures!
+		It’s a platform to book trekking and hiking explorations. 
+		It shows various places that are available for the treks and also allows you to book the tickets online.
+		In case you miss out on the count, you can even edit the booking. 
+		Addition to these features, the contact information of the concerned person is also available for further queries"""
+                           
 customer_details = dict()
+#total_me = 30
+
 
 
 # To check User's email ID.
@@ -135,7 +141,7 @@ while True:
         sub_choice = int(input("Which place are you looking for?\n\
 							  1.Himachal_Pradesh,aka The Apple State\n\
 							  2.Sikkim\n\
-							  3.Uttarkhand, its natural beauty of the Himalayas, the Bhabhar and the Terai grasslands and savannas.\n\
+							  3.Uttarkhand, its natural beauty of the Himalayas.\n\
 							  4.EXIT\n-->"))
         if sub_choice == 1:
             print(tabulate(Himachal_Pradesh,
@@ -257,6 +263,4 @@ while True:
     else:
         print("THANK YOU.VISIT AGAIN.")
         break
-
-
 
